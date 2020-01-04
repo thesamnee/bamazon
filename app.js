@@ -22,8 +22,14 @@ function showStock(){
     ------------
     `)
     for (let i=0; i<res.length; i++){
+
+        if (res[i].stock <= 0){
+            price = "OUT OF STOCK"
+        } else {
+            price = `\$${res[i].price}`
+        }
       console.log(`
-      |  ${res[i].id}  |  ${res[i].product_name}  |  \$${res[i].price}  |
+      |  ${res[i].id}  |  ${res[i].product_name}  |  ${price}  |
       `)
     }
   })
